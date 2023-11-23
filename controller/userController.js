@@ -15,15 +15,21 @@ exports.createUser = async (req, res) => {
     }
 }
 
+exports.getUserById = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        // Tour.findOne({ _id: req.params.id })
 
-
-
-
-
-exports.getUserById = (req, res) => {
-    res.status(201).json({
-        status: 'success'
-    })
+        res.status(200).json({
+            status: 'success',
+            data: user
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err
+        });
+    }
 }
 
 exports.getAllUsers = (req, res) => {

@@ -3,19 +3,18 @@ const mongoose = require('mongoose');
 const jobSchema = new mongoose.Schema({
     name: {
         type: String,
-        // required: [true, 'Enterprise must have a name']
+        required: [true, 'Enterprise must have a name']
     },
     jobName: {
         type: String,
-        // required: [true, 'A job must have a name']
+        required: [true, 'A job must have a name']
     },
     startDate: {
         type: String,
-        // required: [true, 'A job must have a name']
+        required: [true, 'A job must have a name']
     },
     endDate: {
-        type: String,
-        // required: [true, 'A job must have a name']
+        type: String
     },
 });
 
