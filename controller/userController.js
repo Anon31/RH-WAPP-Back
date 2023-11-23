@@ -18,7 +18,6 @@ exports.createUser = async (req, res) => {
 exports.getUserById = async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
-        // Tour.findOne({ _id: req.params.id })
 
         res.status(200).json({
             status: 'success',
